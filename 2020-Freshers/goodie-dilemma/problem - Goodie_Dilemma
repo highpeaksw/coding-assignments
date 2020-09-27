@@ -50,3 +50,5 @@ And the difference between the chosen goodie with highest price and the lowest p
 
 The input has to be read from a file. The input file contains the all the goodies and their prices as shown in the example input file sample_input.txt in the current folder . 
 The output has to be written to a file as shown in the example output file sample_output.txt in the current folder.
+
+Usage of any libraries provided by the language or the framework used is restricted, except for the Mathematics and the I/O libraries.
