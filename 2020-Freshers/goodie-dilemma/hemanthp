@@ -1,0 +1,100 @@
+package meghaAssignmentPackage;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class gooddies {
+
+	public gooddies() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		HashMap<String,Integer> hm=new HashMap<>(); 
+		hm.put("MI Band", 999);
+		hm.put("Sandwich Toaster", 2195);
+		hm.put("Cult pass", 2799);
+		hm.put("Scale", 4999);
+		hm.put("Fitbit plus", 7980);
+		hm.put("Microve Oven", 9800);
+		hm.put("Alexa", 9999);
+		hm.put("Digital Camera", 11101);
+		hm.put("IPods", 22349);
+		hm.put("Mackbook Pro", 229900);
+	
+//		number of employees
+		int n=6;
+		
+		Integer[] s1 = hm.values().toArray(new Integer[0]); 
+		
+		Arrays.sort(s1);
+		
+		int min= 99999999;
+		int v1= 0;
+		int v2= 0;
+		for (int i=0; i<s1.length; i++) {
+			if(i >= n-1) {
+				int dif = s1[i]-s1[i-(n-1)];
+				
+				if(dif < min) {
+					min = dif;
+					v1 = s1[i-(n-1)];
+					v2 = s1[i];
+				}
+			}
+		}
+		
+		System.out.println("Here the goodies that are selected for distribution are: ");
+		
+		
+		Iterator hmIterator = hm.entrySet().iterator();
+		
+		while (hmIterator.hasNext()) { 
+            Map.Entry mapElement = (Map.Entry)hmIterator.next(); 
+            int value = (int) mapElement.getValue();
+            if(value >= v1 && value <= v2) {
+            	System.out.println(mapElement.getKey() + " : " + mapElement.getValue());
+            }
+        } 
+		
+		System.out.println("And the diff between highest and lowest is: " + min);
+		
+
+	}
+
+}
+
+Output: 
+
+No of employees: 4
+
+Here the goodies that are selected for distribution are: 
+Alexa : 9999
+Digital Camera : 11101
+Fitbit plus : 7980
+Microve Oven : 9800
+And the diff between highest and lowest is: 3121
+
+
+No of employees: 6
+
+Here the goodies that are selected for distribution are: 
+Alexa : 9999
+Sandwich Toaster : 2195
+Cult pass : 2799
+Scale : 4999
+Fitbit plus : 7980
+Microve Oven : 9800
+And the diff between highest and lowest is: 7804
+
+No of employees: 2
+
+Here the goodies that are selected for distribution are: 
+Alexa : 9999
+Microve Oven : 9800
+And the diff between highest and lowest is: 199
+
