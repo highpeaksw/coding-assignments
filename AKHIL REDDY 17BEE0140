@@ -1,0 +1,65 @@
+
+CODE
+
+import java.io.*;
+import java.util.*;
+import java.nio.file.*;
+class Goodie{
+     public static void main(String args[])throws IOException{
+ HashMap<Integer,String> map= new HashMap<>();
+ try(
+          File file=new File("sample_input.txt");
+Scanner s=new Scanner(file);
+int k=s.nextInt();
+ArrayList<Integer> arr=new ArrayList<>();
+  while(s.hasNextLine()){
+    String m =s.nextLine();
+    String[] strArray=m.split(":");
+map.putIfAbsent(Integer.parseInt(strArray[1]),strArray[0]);
+arr.add(Integer.parseInt(strArray[1]));
+}
+Collections.sort(arr);
+int min=Integer.MAX_VALUE;
+int start_index=-1;
+int end_index=k;
+for(int i=0;i<arr.size();i++){
+if(min<(arr.get(i+k-1)-arr.get(i))){
+start_index=i;
+end_index=i+k-1;
+}
+}
+String result="";
+for(int i=start_index;i<=end_index;i++){
+result=result+map.get(arr.get(i))+":"+arr.get(i)+"/n";
+}
+Path fileName=Path.of("sample_output.txt");
+Files.writeString(fileName,result)
+	);
+catch{exception e} 
+(System.out.println("error"+e));
+}
+}}
+INPUT
+Number of employees: 4
+
+Goodies and Prices:
+
+Fitbit Plus: 7980
+IPods: 22349
+MI Band: 999
+Cult Pass: 2799
+Macbook Pro: 229900
+Digital Camera: 11101
+Alexa: 9999
+Sandwich Toaster: 2195
+Microwave Oven: 9800
+Scale: 4999
+OUTPUT
+The goodies selected for distribution are:
+
+Fitbit Plus: 7980
+Microwave Oven: 9800
+Alexa: 9999
+Digital Camera: 11101
+
+And the difference between the chosen goodie with highest price and the lowest price is 3121
