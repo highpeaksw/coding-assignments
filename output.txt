@@ -1,0 +1,7 @@
+The goodies selected for distribution: 
+Fitbit Plus: 8000
+Cult Pass: 2799
+Alexa: 9999
+Microwave Oven: 9800
+Scale: 5000
+And the difference between the chosen goodie with highest price and the lowest price is 7200
