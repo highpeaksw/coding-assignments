@@ -1,0 +1,43 @@
+const fs = require("fs");
+const readline = require("readline");
+let input = {};
+let output = "";
+let input_filename = "sample_input.txt";
+let output_filename = "sample_output.txt";
+let M;
+let q = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+fs.readFile(input_filename, "utf-8", (err, res) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  res.split("\n").map((item) => {
+    let arr = item.split(":");
+    input[arr[0]] = parseInt(arr[1]);
+  });
+
+  let tempInput = Object.entries(input);
+  tempInput.sort((a, b) => a[1] - b[1]);
+  tempInput.map((item) => {
+    input[item[0]] = item[1];
+  });
+  q.question("Enter M:", (ans) => {
+    M = ans;
+    output = `\nNumber of employees: ${M}\n\nHere the goodies selected for distribution are:\n`;
+    for (let i = 0; i < M; i++) {
+      output += `${tempInput[i][0]}: ${tempInput[i][1]}\n`;
+    }
+    output +=`\n\nAnd the difference between the chosen goodie with highest price and the lowest price is ${tempInput[M-1][1]-tempInput[0][1]}\n\n`;
+    fs.writeFile(output_filename, output, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(output);
+      }
+    });
+    q.close();
+  });
+});
