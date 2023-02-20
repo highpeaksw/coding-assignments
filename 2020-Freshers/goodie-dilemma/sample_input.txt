@@ -12,3 +12,25 @@ Alexa: 9999
 Sandwich Toaster: 2195
 Microwave Oven: 9800
 Scale: 4999
+import java.io.;
+import java.util.;
+class Item {
+String name;
+int price;
+
+public Item(String name, int price) {
+this.name = name;
+this.price = price;
+}
+
+public String toString() {
+return this.name + ": " + this.price;
+}
+}
+
+public class Main {
+public static void main(String[] args) throws Exception {
+FileInputStream fis=new FileInputStream("input.txt");
+Scanner sc=new Scanner(fis);
+int number_of_employees = Integer.parseInt(sc.nextLine().split(": ")[1]);
+sc.nextLine(); sc.nextLine(); sc.nextLine();
