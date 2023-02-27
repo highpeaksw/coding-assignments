@@ -1,0 +1,51 @@
+Goodies and Prices
+Fitbit Plus: 789  980
+IPods: 22349
+MI Band: 999
+Cult Pass: 2799
+Macbook Pro: 229900
+Digital Camera: 11101
+Alexa: 9999
+Sandwich Toaster: 2195
+Microwave Oven: 9800
+Scale: 4999
+
+Enter no.of test cases:3
+Number of the employees:4
+
+Here the goodies that are selected for distribution are:
+Fitbit Plus: 7980
+Microwave Oven: 9800
+Alexa: 9999
+Digital Camera: 11101
+
+And the difference between the chosen goodie with highest price and the lowest price is 3121
+Number of the employees:6
+
+Here the goodies that are selected for distribution are:
+Sandwich Toaster: 2195
+Cult Pass: 2799
+Scale: 4999
+Fitbit Plus: 7980
+Microwave Oven: 9800
+Alexa: 9999
+
+And the difference between the chosen goodie with highest price and the lowest price is 7804
+Number of the employees:6
+
+Here the goodies that are selected for distribution are:
+Sandwich Toaster: 2195
+Cult Pass: 2799
+Scale: 4999
+Fitbit Plus: 7980
+Microwave Oven: 9800
+Alexa: 9999
+
+And the difference between the chosen goodie with highest price and the lowest price is 7804
+Number of the employees:2
+
+Here the goodies that are selected for distribution are:
+Microwave Oven: 9800
+Alexa: 9999
+
+And the difference between the chosen goodie with highest price and the lowest price is 199
